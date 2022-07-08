@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:p="http://www.springframework.org/schema/p" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	
+	<bean id="role" class="com.yash.spring.Role" factory-method="getOBJR"></bean>
+	
+		<bean id="shape1" class="com.yash.spring.ShapeFactoryMethod" factory-method="getShapeobj"></bean>
+		
+		
+		<bean id="cat" class="com.yash.spring.Category">
+			<property name="cid" value="01"/>
+			<property name="cname" value="Cloths"/></bean>
+			
+<bean id="item" class="com.yash.spring.Item">
+<property name="id" value="1234"/>
+<property name="iname" value="yellow formal shirts"/>
+<property name="iprice" value="600"/>
+<property name="objcat" ref="cat"/>	</bean>
+
+<bean id="Custbean" class="com.yash.spring.Customer">
+				<property name="custid" value="01"/>
+			<property name="custname" value="Rajiv singh"/>
+			<property name="objitem" ref="item"/></bean>
+ 
+			<bean id="emibean" class="com.yash.spring.EMI">
+				<constructor-arg value="16000" type="float"/>
+                 <constructor-arg value="100" type="float"/>
+				<constructor-arg value="2" type="float"/>
+			</bean>
+<bean id="dept1" class="com.yash.spring.Department">
+	<property name="deptid" value="012"/>
+<property name="deptname" value="Testing"/>
+</bean>
+<bean id="dept2" class="com.yash.spring.Department">
+	<property name="deptid" value="021"/>
+<property name="deptname" value="IT production"/>
+</bean>
+<bean id="dept3" class="com.yash.spring.Department">
+	<property name="deptid" value="031"/>
+<property name="deptname" value="HR"/>
+</bean>
+
+<bean id="e1" class="com.yash.spring.Employee">
+	<property name="eid" value="01"/>
+	<property name="ename" value="Rahul Singh"/>
+	<property name="salary" value="70000"/>
+<property name="objdept" ref="dept1"/>
+	
+</bean>
+<bean id="e2" class="com.yash.spring.Employee">
+	<property name="eid" value="02"/>
+	<property name="ename" value="Rhushi Gambire"/>
+	<property name="salary" value="34000"/>
+<property name="objdept" ref="dept2"/>
+</bean>
+<bean id="e3" class="com.yash.spring.Employee">
+	<property name="eid" value="03"/>
+	<property name="ename" value="Manmohan Singh"/>
+	<property name="salary" value="43800"/>
+<property name="objdept" ref="dept1"/>
+</bean>
+<bean id="e4" class="com.yash.spring.Employee">
+	<property name="eid" value="04"/>
+	<property name="ename" value="Rohan Rajput"/>
+	<property name="salary" value="35900"/>
+<property name="objdept" ref="dept3"/>
+</bean>
+<bean id="que5" class="com.yash.spring.Static" factory-method="getObject"></bean>
+
+<bean id="que2" class="com.yash.spring.Average">
+		<property name="n1" value="98"/>
+		<property name="n2" value="53"/>
+				<property name="n3" value="84"/>
+				<property name="n4" value="40"/>
+						<property name="n5" value="92"/>			
+</bean>
+
+<bean id="vowels" class="com.yash.spring.StaticCVowels" factory-method="getObject2"></bean>
+
+<bean id="que8" class="com.yash.spring.ItemList">
+<property name="itemid" value="01"></property>
+<property name="iname" value="Ballpen"></property>
+<property name="iprice" value="15"></property>
+</bean>
+<bean id="que8-1" class="com.yash.spring.ItemList">
+<property name="itemid" value="02"></property>
+<property name="iname" value="Jellpen"></property>
+<property name="iprice" value="15"></property>
+</bean>
+<bean id="que8-2" class="com.yash.spring.ItemList">
+<property name="itemid" value="03"></property>
+<property name="iname" value="Compass"></property>
+<property name="iprice" value="150"></property>
+</bean>
+<bean id="que8-3" class="com.yash.spring.ItemList">
+<property name="itemid" value="04"></property>
+<property name="iname" value="pencil"></property>
+<property name="iprice" value="15"></property>
+</bean>
+<bean id="que8-4" class="com.yash.spring.ItemList">
+<property name="itemid" value="05"></property>
+<property name="iname" value="bag"></property>
+<property name="iprice" value="355"></property>
+</bean>
+<bean id="que8-5" class="com.yash.spring.ItemList">
+<property name="itemid" value="06"></property>
+<property name="iname" value="TiffineBox"></property>
+<property name="iprice" value="128"></property>
+</bean>
+
+<bean id="finalist" class="com.yash.spring.ListMain">
+<property name="itemlist">
+<list>
+<ref bean="que8"/>
+<ref bean="que8-1"/>
+<ref bean="que8-2"/>
+<ref bean="que8-3"/>
+<ref bean="que8-4"/>
+<ref bean="que8-5"/>
+</list>
+</property>
+</bean>
+
+<bean id="result1" class="com.yash.spring.Result">
+<property name="rollno" value="01"/>
+<property name="math" value="84"/>
+<property name="hindi" value="74"/>
+<property name="english" value="80"/>
+<property name="science" value="94"/>
+</bean>
+<bean id="result2" class="com.yash.spring.Result">
+<property name="rollno" value="02"/>
+<property name="math" value="74"/>
+<property name="hindi" value="74"/>
+<property name="english" value="50"/>
+<property name="science" value="84"/>
+</bean>
+<bean id="result3" class="com.yash.spring.Result">
+<property name="rollno" value="03"/>
+<property name="math" value="84"/>
+<property name="hindi" value="76"/>
+<property name="english" value="90"/>
+<property name="science" value="74"/>
+</bean>
+<bean id="result4" class="com.yash.spring.Result">
+<property name="rollno" value="04"/>
+<property name="math" value="80"/>
+<property name="hindi" value="74"/>
+<property name="english" value="90"/>
+<property name="science" value="94"/>
+</bean>
+<bean id="result5" class="com.yash.spring.Result">
+<property name="rollno" value="05"/>
+<property name="math" value="85"/>
+<property name="hindi" value="74"/>
+<property name="english" value="76"/>
+<property name="science" value="54"/>
+</bean>
+
+<bean id="student1" class="com.yash.spring.Student">
+<property name="Sname" value="Rushikesh Madke"/>
+<property name="dob" value="07-06-2000"/>
+<property name="classname" value="10th"/>
+<property name="section" value="A"/>
+<property name="objresult" ref="result1"/>
+
+</bean>
+</beans>
+
